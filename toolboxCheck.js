@@ -1,8 +1,20 @@
-// Zack's Regular Expression Example for Email Validation
-const emailValidatorRegex = new RegExp('^.+@.+\\..+$');
+// Regex Sandbox - Practice from Zack's Bootcamp
+const string1 = 'zickOne writes code';
+const string2 = 'zickOne is a Dev';
 
-const myEmail = "test@example.com";
-const badEmail = "wrong-email-format";
+// 1. Simple Search
+const searchRegex = /zickOne/;
+console.log("Simple Search:", searchRegex.exec(string1));
 
-console.log("Testing good email:", emailValidatorRegex.test(myEmail)); // Should be true
-console.log("Testing bad email:", emailValidatorRegex.test(badEmail)); // Should be false
+// 2. OR Logic
+const orRegex = /(code|zickOne)/;
+console.log("OR Logic:", orRegex.test(string2));
+
+// 3. Character Classes and Quantifiers
+// Looking for exactly 4 lowercase letters in a row
+const quantifierRegex = /[a-z]{4}/;
+console.log("Quantifier Match:", quantifierRegex.exec(string2));
+
+// 4. Anchor Match (Starts with T?)
+const anchorRegex = /^T/;
+console.log("Starts with T?:", anchorRegex.test(string1));

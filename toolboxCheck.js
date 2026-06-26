@@ -1,20 +1,21 @@
-// Regex Sandbox - Practice from Zack's Bootcamp
-const string1 = 'zickOne writes code';
-const string2 = 'zickOne is a Dev';
+// --- String Methods Sandbox ---
 
-// 1. Simple Search
-const searchRegex = /zickOne/;
-console.log("Simple Search:", searchRegex.exec(string1));
+const devName = "  Javier Ibanez  ";
 
-// 2. OR Logic
-const orRegex = /(code|zickOne)/;
-console.log("OR Logic:", orRegex.test(string2));
+// 1. .trim() - Removes extra whitespace from start/end
+const cleanName = devName.trim();
+console.log(`Trimmed: "${cleanName}"`);
 
-// 3. Character Classes and Quantifiers
-// Looking for exactly 4 lowercase letters in a row
-const quantifierRegex = /[a-z]{4}/;
-console.log("Quantifier Match:", quantifierRegex.exec(string2));
+// 2. .toUpperCase() / .toLowerCase()
+console.log(cleanName.toUpperCase()); // "JAVIER IBANEZ"
 
-// 4. Anchor Match (Starts with T?)
-const anchorRegex = /^T/;
-console.log("Starts with T?:", anchorRegex.test(string1));
+// 3. .includes() - Does the string contain this text?
+console.log(cleanName.includes("Ibanez")); // true
+
+// 4. .split() - Turns string into array
+const nameArray = cleanName.split(" ");
+console.log(nameArray); // ["Javier", "Ibanez"]
+
+// 5. .slice() - Extract part of a string
+// Grabs the first 3 letters
+console.log(cleanName.slice(0, 3)); // "Jav"

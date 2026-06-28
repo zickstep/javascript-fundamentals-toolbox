@@ -1,12 +1,17 @@
-// CHALLENGE: Create a function that takes a word and reverses it.
-// Example: "hello" becomes "olleh"
+/**
+ * @description Takes a string and returns the characters in reverse order.
+ * @author Javier Ibanez
+ * @date 2026-06-27
+ * @param {string} inputString - The string to be reversed.
+ * @returns {string} - The reversed string.
+ */
+function reverseString(inputString) {
+  // Use built-in methods: split into array, reverse array, join back to string
+  return inputString.split("").reverse().join("");
+}
 
-const reverseWord = (word) => {
-    // 1. .split("") breaks the string into an array of letters
-    // 2. .reverse() flips that array backwards
-    // 3. .join("") glues the letters back into a string
-    return word.split("").reverse().join("");
-};
+//Example usage:
+const original = "Hello world";
+console.log(reverseString(original)); // "dlrow olleH"
 
-// Test log to verify
-console.log(reverseWord("zickstep")); // Output should be: petskciz
+reverseString("Javier Ibanez"); // "zenabI reivaJ"
